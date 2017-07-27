@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<!--
+ * Copyright (c) 2017, kuaty.com
+ * All rights reserved.
+
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are PROHIBITED without prior written permission from
+ * the author. This product may NOT be used anywhere and on any computer
+ * except the server platform of kuaty Inc. located at www.kuaty.com.
+ * Federal copyright law prohibits unauthorized reproduction by any means
+ * and imposes fines up to $100,000 for violation. If you received
+ * this code accidentally and without intent to use it, please report this
+ * incident to the author by email.
+
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+ * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jcabi</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.48.5</version>
+    </parent>
+    <groupId>com.kuaty</groupId>
+    <artifactId>kuaty</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>kuaty</name>
+    <description>An educational platform</description>
+    <url>https://gitlab.com/fabriciofx/kuaty</url>
+    <inceptionYear>2017</inceptionYear>
+    <organization>
+        <name>kuaty</name>
+	<url>https://gitlab.com/fabriciofx/kuaty</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://gitlab.com/fabriciofx/LICENSE.txt</url>
+            <distribution>site</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>1</id>
+            <name>Fabrício Barros Cabral</name>
+            <email>fabriciofx@gmail.com</email>
+            <organization>fabriciofx</organization>
+            <roles>
+                <role>Architect</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>-3</timezone>
+        </developer>
+    </developers>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://gitlab.com/fabriciofx/kuaty/issues</url>
+    </issueManagement>
+    <scm>
+        <connection>scm:git:git@gitlab.com:fabriciofx/kuaty.git</connection>
+        <developerConnection>scm:git:git@gitlab.com:fabriciofx/kuaty.git</developerConnection>
+        <url>https://gitlab.com/fabriciofx/kuaty</url>
+    </scm>
+    <distributionManagement>
+        <site>
+            <id>gitlab-pages</id>
+            <url>https://gitlab.com/fabriciofx/kuaty</url>
+        </site>
+    </distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <profiles>
+        <profile>
+            <id>qulice</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.qulice</groupId>
+                        <artifactId>qulice-maven-plugin</artifactId>
+                        <configuration>
+                            <excludes combine.children="append">
+                                <exclude>checkstyle:/src/site/resources/.*</exclude>
+                                <exclude>findbugs:.*</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.7.9</version>
+                        <configuration>
+                            <output>file</output>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>jacoco-initialize</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>jacoco-check</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <rule>
+                                            <element>BUNDLE</element>
+                                            <limits>
+                                                <limit>
+                                                    <counter>INSTRUCTION</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>0.10</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>LINE</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>0.10</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>BRANCH</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>0.10</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>COMPLEXITY</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>0.10</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>METHOD</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>0.10</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>CLASS</counter>
+                                                    <value>MISSEDCOUNT</value>
+                                                    <maximum>100</maximum>
+                                                </limit>
+                                            </limits>
+                                        </rule>
+                                    </rules>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>jacoco-site</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
