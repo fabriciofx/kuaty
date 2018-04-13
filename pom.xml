@@ -2,7 +2,7 @@
 <!--
   ~ Proprietary License
   ~
-  ~ Copyright (c) 2018, Kuaty Inc. - All rights reserved.
+  ~ Copyright (c) 2018 Kuaty Inc. All rights reserved.
   ~
   ~ Redistribution and use in source and binary forms, with or without
   ~ modification, are PROHIBITED without prior written permission from the
@@ -11,6 +11,9 @@
   ~ law prohibits unauthorized reproduction by any means and imposes fines up to
   ~ $300,000 for violation. If you received this code accidentally and without
   ~ intent to use it, please report this incident to the author by email.
+  ~
+  ~ The above copyright notice and this permission notice shall be included in
+  ~ all copies or substantial portions of the Software.
   ~
   ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
   ~ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -161,10 +164,11 @@
           <plugin>
             <groupId>com.qulice</groupId>
             <artifactId>qulice-maven-plugin</artifactId>
+            <version>0.17.1</version>
             <configuration>
+              <license>file:${basedir}/LICENSE.txt</license>
               <excludes combine.children="append">
                 <exclude>checkstyle:/src/main/resources/images/.*</exclude>
-                <exclude>checkstyle:/src/site/resources/.*</exclude>
                 <exclude>checkstyle:/src/test/resources/.*</exclude>
                 <exclude>pmd:/src/test/resources/.*</exclude>
                 <exclude>findbugs:.*</exclude>
