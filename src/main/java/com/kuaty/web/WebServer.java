@@ -28,7 +28,7 @@ package com.kuaty.web;
 import java.io.IOException;
 import com.kuaty.app.Server;
 import org.takes.http.Exit;
-import org.takes.http.FtBasic;
+import org.takes.http.FtCli;
 
 /**
  * HTTP web server.
@@ -39,30 +39,22 @@ import org.takes.http.FtBasic;
  */
 public final class WebServer implements Server {
     /**
-     * HTTP port.
+     * WebServer parameters
      */
-    private final int port;
-
-    /**
-     * Ctor.
-     */
-    public WebServer() {
-        // @checkstyle MagicNumber (1 line)
-        this(8080);
-    }
+    private final String[] params;
 
     /**
      * Ctor.
      *
-     * @param port Web port
+     * @param parameters Parameters to the WebServer
      */
-    public WebServer(final int port) {
-        this.port = port;
+    public WebServer(final String... parameters) {
+        this.params = parameters;
     }
 
     @Override
     public void start() throws IOException {
-        new FtBasic(new TkRoutes(), this.port).start(Exit.NEVER);
+        new FtCli(new TkRoutes(), this.params).start(Exit.NEVER);
     }
 
     @Override

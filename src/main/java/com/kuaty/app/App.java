@@ -45,8 +45,7 @@ public final class App {
      * @throws IOException If something goes wrong
      */
     public static void main(final String... args) throws IOException {
-        new WebServer()
-            .start();
+        new WebServer(args).start();
     }
 
 }
