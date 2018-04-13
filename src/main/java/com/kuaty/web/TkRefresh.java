@@ -1,15 +1,18 @@
 /**
  * Proprietary License
  *
- * Copyright (c) 2018, Kuaty Inc. - All rights reserved.
+ * Copyright (c) 2018 Kuaty Inc. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are PROHIBITED without prior written permission from the
  * author. This product may NOT be used anywhere and on any computer except the
- * server platform of Kuaty Inc. located at www.kuaty.com. Federal copyright
+ * server platform of Kuaty Inc., located at www.kuaty.com. Federal copyright
  * law prohibits unauthorized reproduction by any means and imposes fines up to
  * $300,000 for violation. If you received this code accidentally and without
  * intent to use it, please report this incident to the author by email.
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -25,6 +28,7 @@
  */
 package com.kuaty.web;
 
+import com.jcabi.log.VerboseProcess;
 import java.io.File;
 import java.io.IOException;
 import org.takes.facets.fork.FkFixed;
@@ -33,7 +37,6 @@ import org.takes.facets.fork.TkFork;
 import org.takes.tk.TkClasspath;
 import org.takes.tk.TkFiles;
 import org.takes.tk.TkWrap;
-import com.jcabi.log.VerboseProcess;
 
 /**
  * Refresh on hit.
