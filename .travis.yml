@@ -2,7 +2,7 @@ language: java
 sudo: false
 cache:
   directories:
-    - $HOME/.m2
+    - "$HOME/.m2"
 script:
   - set -e
   - mvn clean site -Psite --errors --batch-mode
@@ -14,4 +14,8 @@ env:
 jdk:
   - oraclejdk8
 after_success:
-  - "bash <(curl -s https://codecov.io/bash)"
+  - bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: heroku
+  api_key:
+    secure: njbpwLE4DI0kfVLLIYp54eKQRNVUBC/4bvYi/07ChEvpCo2JyMvPuRAfTw8nAaMUdTMFXKp0VWuFc/BxGI546NeM9XxoFMP6k9Ni9Ya2linHJdCrzSqy+YlfakfvMSBm9XrOrLxNBhm+RuOpv7VWBS4hbEzP5Mcb6pP1SpNVL18Umk3mYGlU2HoTD995M+oAKnuNjPL+SvXQr9SP/t60ZReaYtRttCyUt5kxB+lhtWlEnnUD6qSSNWbs6Fzj/Nh9AJD3c2s56IPp0wgJHt15O3tCs5wU4FVbJGZajxeouIsoLmGvixgwzhCbqSCgys5P6/KxVBgs5nsYZ0J+tBbPq/RoNFghQ1DTcn6vSts2ydUTtyeh3ybZbSdxZjOF1tSTBus5/XM9QfRpOS7KVlcua+Ffu3ZDx+Ba3ykKU9XVF7YQBU0LoFjPmgxn5J0Ds9w3TMBYNIeIlXRtXbJ3EsD4KhfK5H+IpT23SFQxM2MMFbkCZXAG3xn595saG5uL/X9BlTUOHqC/btulxwoGxokC0ap37PPSWvO7J8gRVAJqDLDLPzh3iKPum6NjKLi+ncTjHfCyYEr3dS6J/m0UNo9bqbdrFjg3prRWTxIGJJebQLwSK9adF4RBvn3ER9knUd7AprqczKVbLzXOqA5VDkDvcLfpqDE0NqigpbRAY18X0LQ=
