@@ -26,9 +26,9 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package com.kuaty.app;
+package com.kuaty;
 
-import com.kuaty.web.WebServer;
+import com.kuaty.infra.WebServer;
 import java.io.IOException;
 
 /**
@@ -41,7 +41,6 @@ import java.io.IOException;
  */
 @SuppressWarnings("PMD.UseUtilityClass")
 public final class App {
-
     /**
      * Main procedure.
      *
@@ -51,5 +50,4 @@ public final class App {
     public static void main(final String... args) throws IOException {
         new WebServer(args).start();
     }
-
 }

@@ -26,58 +26,30 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package com.kuaty.web;
+package com.kuaty.infra;
 
 import java.io.IOException;
-import org.takes.facets.fork.FkRegex;
-import org.takes.facets.fork.TkFork;
-import org.takes.tk.TkClasspath;
-import org.takes.tk.TkWithType;
-import org.takes.tk.TkWrap;
 
 /**
- * Web routes.
+ * Server.
  *
  * @author Fabricio Cabral (fabriciofx@gmail.com)
  * @version $Id$
  * @since 0.1
  */
-public final class TkRoutes extends TkWrap {
+public interface Server {
+
     /**
-     * Ctor.
+     * Start the server.
      *
      * @throws IOException If something goes wrong
      */
-    public TkRoutes() throws IOException {
-        super(
-            new TkFork(
-                new FkRegex(
-                    "/robots.txt",
-                    ""
-                ),
-                new FkRegex(
-                    "/css/.+\\.css",
-                    new TkWithType(
-                        new TkClasspath("/html"),
-                        "text/css"
-                    )
-                ),
-                new FkRegex(
-                    "/images/[a-z]+\\.jpg",
-                    new TkWithType(
-                        new TkRefresh("./src/main/resources"),
-                        "image/png"
-                    )
-                ),
-                new FkRegex(
-                    "/",
-                    new TkIndex()
-                ),
-                new FkRegex(
-                    "/(?<path>[^/]+)",
-                    new TkPage()
-                )
-            )
-        );
-    }
+    void start() throws IOException;
+
+    /**
+     * Stop the server.
+     *
+     * @throws IOException If something goes wrong
+     */
+    void stop() throws IOException;
 }

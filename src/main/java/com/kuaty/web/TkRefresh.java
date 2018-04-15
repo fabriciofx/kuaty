@@ -47,7 +47,6 @@ import org.takes.tk.TkWrap;
  * @checkstyle ClassDataAbstractionCouplingCheck (500 lines)
  */
 final class TkRefresh extends TkWrap {
-
     /**
      * Ctor.
      * @param path Path of files
@@ -70,5 +69,4 @@ final class TkRefresh extends TkWrap {
             )
         );
     }
-
 }

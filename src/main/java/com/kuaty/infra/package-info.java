@@ -28,10 +28,10 @@
  */
 
 /**
- * Kuaty app.
+ * Kuaty infra.
  *
  * @author Fabricio Cabral (fabriciofx@gmail.com)
  * @version $Id$
  * @since 0.1
  */
-package com.kuaty.app;
+package com.kuaty.infra;
