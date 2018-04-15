@@ -122,7 +122,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>com.kuaty.app.App</mainClass>
+                  <mainClass>com.kuaty.App</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>

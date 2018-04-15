@@ -26,30 +26,42 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package com.kuaty.app;
+package com.kuaty.infra;
 
+import com.kuaty.web.TkRoutes;
 import java.io.IOException;
+import org.takes.http.Exit;
+import org.takes.http.FtCli;
 
 /**
- * Server.
+ * HTTP web server.
  *
  * @author Fabricio Cabral (fabriciofx@gmail.com)
  * @version $Id$
  * @since 0.1
  */
-public interface Server {
+public final class WebServer implements Server {
+    /**
+     * WebServer parameters.
+     */
+    private final String[] params;
 
     /**
-     * Start the server.
+     * Ctor.
      *
-     * @throws IOException If something goes wrong
+     * @param parameters Parameters to the WebServer
      */
-    void start() throws IOException;
+    public WebServer(final String... parameters) {
+        this.params = parameters;
+    }
 
-    /**
-     * Stop the server.
-     *
-     * @throws IOException If something goes wrong
-     */
-    void stop() throws IOException;
+    @Override
+    public void start() throws IOException {
+        new FtCli(new TkRoutes(), this.params).start(Exit.NEVER);
+    }
+
+    @Override
+    public void stop() throws IOException {
+        throw new UnsupportedOperationException("#stop");
+    }
 }
