@@ -1,4 +1,4 @@
-/**
+/*
  * Proprietary License
  *
  * Copyright (c) 2018 Kuaty Inc. All rights reserved.
@@ -29,22 +29,21 @@
 package com.kuaty.infra;
 
 import com.kuaty.web.TkRoutes;
-import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import org.takes.http.Exit;
 import org.takes.http.FtCli;
 
 /**
  * HTTP web server.
  *
- * @author Fabricio Cabral (fabriciofx@gmail.com)
- * @version $Id$
  * @since 0.1
  */
 public final class WebServer implements Server {
     /**
      * WebServer parameters.
      */
-    private final String[] params;
+    private final List<String> params;
 
     /**
      * Ctor.
@@ -52,16 +51,16 @@ public final class WebServer implements Server {
      * @param parameters Parameters to the WebServer
      */
     public WebServer(final String... parameters) {
-        this.params = parameters;
+        this.params = Arrays.asList(parameters);
     }
 
     @Override
-    public void start() throws IOException {
+    public void start() throws Exception {
         new FtCli(new TkRoutes(), this.params).start(Exit.NEVER);
     }
 
     @Override
-    public void stop() throws IOException {
+    public void stop() throws Exception {
         throw new UnsupportedOperationException("#stop");
     }
 }

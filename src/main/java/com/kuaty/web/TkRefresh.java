@@ -1,4 +1,4 @@
-/**
+/*
  * Proprietary License
  *
  * Copyright (c) 2018 Kuaty Inc. All rights reserved.
@@ -30,7 +30,6 @@ package com.kuaty.web;
 
 import com.jcabi.log.VerboseProcess;
 import java.io.File;
-import java.io.IOException;
 import org.takes.facets.fork.FkFixed;
 import org.takes.facets.fork.FkHitRefresh;
 import org.takes.facets.fork.TkFork;
@@ -41,8 +40,6 @@ import org.takes.tk.TkWrap;
 /**
  * Refresh on hit.
  *
- * @author Yegor Bugayenko (yegor256@gmail.com)
- * @version $Id: 9794b044778737118ce2864c4687178453c86288 $
  * @since 1.0
  * @checkstyle ClassDataAbstractionCouplingCheck (500 lines)
  */
@@ -50,9 +47,9 @@ final class TkRefresh extends TkWrap {
     /**
      * Ctor.
      * @param path Path of files
-     * @throws IOException If something goes wrong
+     * @throws Exception If something goes wrong
      */
-    TkRefresh(final String path) throws IOException {
+    TkRefresh(final String path) throws Exception {
         super(
             new TkFork(
                 new FkHitRefresh(

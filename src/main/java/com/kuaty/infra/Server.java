@@ -1,4 +1,4 @@
-/**
+/*
  * Proprietary License
  *
  * Copyright (c) 2018 Kuaty Inc. All rights reserved.
@@ -28,13 +28,9 @@
  */
 package com.kuaty.infra;
 
-import java.io.IOException;
-
 /**
  * Server.
  *
- * @author Fabricio Cabral (fabriciofx@gmail.com)
- * @version $Id$
  * @since 0.1
  */
 public interface Server {
@@ -42,14 +38,14 @@ public interface Server {
     /**
      * Start the server.
      *
-     * @throws IOException If something goes wrong
+     * @throws Exception If something goes wrong
      */
-    void start() throws IOException;
+    void start() throws Exception;
 
     /**
      * Stop the server.
      *
-     * @throws IOException If something goes wrong
+     * @throws Exception If something goes wrong
      */
-    void stop() throws IOException;
+    void stop() throws Exception;
 }

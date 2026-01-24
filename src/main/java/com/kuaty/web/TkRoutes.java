@@ -1,4 +1,4 @@
-/**
+/*
  * Proprietary License
  *
  * Copyright (c) 2018 Kuaty Inc. All rights reserved.
@@ -28,7 +28,6 @@
  */
 package com.kuaty.web;
 
-import java.io.IOException;
 import org.takes.facets.fork.FkRegex;
 import org.takes.facets.fork.TkFork;
 import org.takes.tk.TkClasspath;
@@ -38,17 +37,15 @@ import org.takes.tk.TkWrap;
 /**
  * Web routes.
  *
- * @author Fabricio Cabral (fabriciofx@gmail.com)
- * @version $Id$
  * @since 0.1
  */
 public final class TkRoutes extends TkWrap {
     /**
      * Ctor.
      *
-     * @throws IOException If something goes wrong
+     * @throws Exception If something goes wrong
      */
-    public TkRoutes() throws IOException {
+    public TkRoutes() throws Exception {
         super(
             new TkFork(
                 new FkRegex(

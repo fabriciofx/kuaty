@@ -1,4 +1,4 @@
-/**
+/*
  * Proprietary License
  *
  * Copyright (c) 2018 Kuaty Inc. All rights reserved.
@@ -28,10 +28,8 @@
  */
 
 /**
- * Kuaty infra.
+ * Infra.
  *
- * @author Fabricio Cabral (fabriciofx@gmail.com)
- * @version $Id$
  * @since 0.1
  */
 package com.kuaty.infra;

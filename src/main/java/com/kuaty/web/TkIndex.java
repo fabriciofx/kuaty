@@ -1,4 +1,4 @@
-/**
+/*
  * Proprietary License
  *
  * Copyright (c) 2018 Kuaty Inc. All rights reserved.
@@ -28,7 +28,6 @@
  */
 package com.kuaty.web;
 
-import java.io.IOException;
 import org.cactoos.io.ResourceOf;
 import org.takes.Request;
 import org.takes.Response;
@@ -38,13 +37,11 @@ import org.takes.rs.RsHtml;
 /**
  * Index.
  *
- * @author Fabricio Cabral (fabriciofx@gmail.com)
- * @version $Id$
  * @since 0.1
  */
 public final class TkIndex implements Take {
     @Override
-    public Response act(final Request req) throws IOException {
+    public Response act(final Request req) throws Exception {
         return new RsHtml(
             new ResourceOf(
                 "html/index.html"

@@ -1,4 +1,4 @@
-/**
+/*
  * Proprietary License
  *
  * Copyright (c) 2018 Kuaty Inc. All rights reserved.
@@ -29,13 +29,10 @@
 package com.kuaty;
 
 import com.kuaty.infra.WebServer;
-import java.io.IOException;
 
 /**
  * Starts the application.
  *
- * @author Fabricio Cabral (fabriciofx@gmail.com)
- * @version $Id$
  * @since 0.1
  * @checkstyle HideUtilityClassConstructorCheck (500 lines)
  */
@@ -45,9 +42,9 @@ public final class App {
      * Main procedure.
      *
      * @param args Parameters used to configure the application
-     * @throws IOException If something goes wrong
+     * @throws Exception If something goes wrong
      */
-    public static void main(final String... args) throws IOException {
+    public static void main(final String... args) throws Exception {
         new WebServer(args).start();
     }
 }
