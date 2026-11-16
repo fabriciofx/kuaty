@@ -5,8 +5,8 @@
 package com.kuaty.infra;
 
 import com.kuaty.web.TkRoutes;
-import java.util.Arrays;
 import java.util.List;
+import org.cactoos.list.ListOf;
 import org.takes.http.Exit;
 import org.takes.http.FtCli;
 
@@ -16,6 +16,7 @@ import org.takes.http.FtCli;
  * @since 0.1
  */
 public final class WebServer implements Server {
+
     /**
      * WebServer parameters.
      */
@@ -27,7 +28,7 @@ public final class WebServer implements Server {
      * @param parameters Parameters to the WebServer
      */
     public WebServer(final String... parameters) {
-        this.params = Arrays.asList(parameters);
+        this.params = new ListOf<>(parameters);
     }
 
     @Override

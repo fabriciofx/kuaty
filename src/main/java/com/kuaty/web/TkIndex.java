@@ -16,6 +16,14 @@ import org.takes.rs.RsHtml;
  * @since 0.1
  */
 public final class TkIndex implements Take {
+
+    /**
+     * Ctor.
+     */
+    @SuppressWarnings("PMD.UncommentedEmptyConstructor")
+    public TkIndex() {
+    }
+
     @Override
     public Response act(final Request req) throws Exception {
         return new RsHtml(

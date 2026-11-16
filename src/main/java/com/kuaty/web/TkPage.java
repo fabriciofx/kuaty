@@ -16,6 +16,14 @@ import org.takes.rs.RsHtml;
  * @since 0.1
  */
 public final class TkPage implements TkRegex {
+
+    /**
+     * Ctor.
+     */
+    @SuppressWarnings("PMD.UncommentedEmptyConstructor")
+    public TkPage() {
+    }
+
     @Override
     public Response act(final RqRegex req) throws Exception {
         return new RsHtml(

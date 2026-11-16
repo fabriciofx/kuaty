@@ -17,11 +17,12 @@ import org.takes.tk.TkWrap;
  * Refresh on hit.
  *
  * @since 1.0
- * @checkstyle ClassDataAbstractionCouplingCheck (500 lines)
  */
 final class TkRefresh extends TkWrap {
+
     /**
      * Ctor.
+     *
      * @param path Path of files
      * @throws Exception If something goes wrong
      */
@@ -30,12 +31,18 @@ final class TkRefresh extends TkWrap {
             new TkFork(
                 new FkHitRefresh(
                     new File(path),
-                    () -> new VerboseProcess(
-                        new ProcessBuilder(
-                            "mvn",
-                            "generate-resources"
-                        )
-                    ).stdout(),
+                    () -> {
+                        try (
+                            VerboseProcess process = new VerboseProcess(
+                                new ProcessBuilder(
+                                    "mvn",
+                                    "generate-resources"
+                                )
+                            )
+                        ) {
+                            process.stdout();
+                        }
+                    },
                     new TkFiles("./target/classes")
                 ),
                 new FkFixed(new TkClasspath())

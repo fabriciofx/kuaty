@@ -10,10 +10,15 @@ import com.kuaty.infra.WebServer;
  * Starts the application.
  *
  * @since 0.1
- * @checkstyle HideUtilityClassConstructorCheck (500 lines)
  */
-@SuppressWarnings("PMD.UseUtilityClass")
 public final class App {
+
+    /**
+     * Ctor.
+     */
+    private App() {
+    }
+
     /**
      * Main procedure.
      *
